@@ -6,7 +6,8 @@ ENV PATH="/opt/Isabelle2016/bin:/opt/pvs:${PATH}"
 
 RUN apt-get update && \
   apt-get install -y coq wget gcc ocaml menhir libmenhir-ocaml-dev libcoq-ocaml-dev libzarith-ocaml-dev\
-                     libocamlgraph-ocaml-dev unzip liblablgtksourceview2-ocaml-dev
+                     libocamlgraph-ocaml-dev unzip liblablgtksourceview2-ocaml-dev\
+                     libzip-ocaml-dev vim libxtst6
 
 RUN mkdir src && cd src && \
   wget https://alt-ergo.ocamlpro.com/download_manager.php?target=alt-ergo-static-1.01-x86_64 -O alt-ergo && \
