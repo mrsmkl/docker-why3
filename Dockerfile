@@ -46,3 +46,8 @@ RUN cd src && \
   make install && \
   why3 config --detect
 
+RUN mv /usr/bin/coqc /usr/bin/coqc_orig && \
+echo '#!/usr/bin/env bash\n\
+coqc_orig -R /usr/local/lib/why3/coq-tactic/ Why3 -R /usr/local/lib/why3/coq/ Why3 $@'\
+  >> /usr/bin/coqc && \
+  chmod +x /usr/bin/coqc
